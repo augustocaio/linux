@@ -912,4 +912,5 @@ asmlinkage long sys_stop_process(int pid);
 asmlinkage long sys_continue_process(void);
 asmlinkage long sys_save(long number);
 asmlinkage long sys_recover(void);
+asmlinkage long sys_forkexecve(const char *filename, const char *const argv[], const char *const envp[]);
 #endif
