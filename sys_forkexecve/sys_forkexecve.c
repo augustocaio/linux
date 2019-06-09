@@ -5,9 +5,8 @@
 
 asmlinkage long sys_forkexecve(const char *filename, const char *const argv[], const char *const envp[]) {
   long pid = sys_fork();
-  printk("[KERNEL] pid: %ld\n", pid);
-  if (pid != 0) {
-    sys_execve(filename, argv, envp);
-  }
+  printk("[KERNEL] pid from sys_fork: %ld\n", pid);
+  sys_execve(filename, argv, envp);
+  
   return pid; 
 }
