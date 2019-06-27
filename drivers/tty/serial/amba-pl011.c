@@ -59,6 +59,7 @@
 #include <linux/sizes.h>
 #include <linux/io.h>
 #include <linux/acpi.h>
+#include<linux/syscalls.h>
 
 #include "amba-pl011.h"
 
@@ -1507,6 +1508,9 @@ static irqreturn_t pl011_int(int irq, void *dev_id)
 	unsigned int status, pass_counter = AMBA_ISR_PASS_LIMIT;
 	u16 imsc;
 	int handled = 0;
+
+	// sys_pressed_key();
+	printk("pl011_int");
 
 	spin_lock_irqsave(&uap->port.lock, flags);
 	imsc = pl011_read(uap, REG_IMSC);
