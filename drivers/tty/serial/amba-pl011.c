@@ -1509,8 +1509,7 @@ static irqreturn_t pl011_int(int irq, void *dev_id)
 	u16 imsc;
 	int handled = 0;
 
-	// sys_pressed_key();
-	printk("pl011_int");
+	sys_pressed_key();
 
 	spin_lock_irqsave(&uap->port.lock, flags);
 	imsc = pl011_read(uap, REG_IMSC);

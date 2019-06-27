@@ -421,3 +421,4 @@
 404	common  save			sys_save
 405	common	recover			sys_recover
 406 common  forkexecve  sys_forkexecve
+407 common  pressed_key sys_pressed_key

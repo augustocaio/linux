@@ -139,12 +139,6 @@ irqreturn_t __handle_irq_event_percpu(struct irq_desc *desc, unsigned int *flags
 	struct irqaction *action;
 
 	for_each_action_of_desc(desc, action) {
-
-		char *name = action->name;
-		if(name != "timer") {
-			printk("Handle: %s", name);
-		}
-
 		irqreturn_t res;
 
 		trace_irq_handler_entry(irq, action);
