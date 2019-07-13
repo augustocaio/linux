@@ -3,6 +3,10 @@
 #include <linux/slab.h>
 
 asmlinkage long sys_kernel_malloc(long size) {
-	kmalloc(sizeof(double) * size, GFP_KERNEL);
+	double *array = kmalloc(sizeof(double) * size, GFP_KERNEL);
+	long i = 0;
+	while(i < size) {
+		array[i++] = 1;
+	}
 	return 0;
 }
